@@ -1,0 +1,7 @@
+{
+  "name": "SHT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
