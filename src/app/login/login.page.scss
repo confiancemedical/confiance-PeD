@@ -1,0 +1,37 @@
+page-login {
+    .content-style {
+        background: #153b6a;
+    }
+  
+    .login{
+        margin-top: 40px;
+    }
+  
+  }
+  
+  .scm1{
+    color: #1d4a82;
+  }
+  
+  .loginText{
+    font-size:1.6em;
+  }
+  
+  :root{
+    /** scm1 **/
+    --ion-color-scm1: #9dbcf5;
+    --ion-color-scm1-rgb: 56, 128, 255;
+    --ion-color-scm1-contrast: #ffffff;
+    --ion-color-scm1-contrast-rgb: 255, 255, 255;
+    --ion-color-scm1-shade: #3171e0;
+    --ion-color-scm1-tint: #4c8dff;
+  
+    /** scm2 **/
+    --ion-color-scm2: #1d4a82;
+    --ion-color-scm2-rgb: 56, 128, 255;
+    --ion-color-scm2-contrast: #ffffff;
+    --ion-color-scm2-contrast-rgb: 255, 255, 255;
+    --ion-color-scm2-shade: #3171e0;
+    --ion-color-scm2-tint: #4c8dff;
+  };
+  

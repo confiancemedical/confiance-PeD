@@ -1,27 +1,25 @@
-#container {
-  text-align: center;
+page-home {
+  .item_radio2{
+      font-size: 1.6rem;
+      //border: 1px;
+      //border-color: black;
+  }
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  .col{
+      border: 1px;
+      border-color: chocolate;
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  .box {
+      padding: 1px;
+      border: 1px dotted chocolate;
+      width: 28px;
+      height: 42.8px;
+      vertical-align: middle;
+      text-align: center;
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  .row {
+      border: 0px;
+  }
 }

@@ -1,0 +1,36 @@
+ion-row{
+    --flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  
+  ion-button {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+  }
+  
+  #avaliar1, #avaliar2 ,#avaliar3 ,#avaliar4 ,#avaliar5 ,#avaliar6 ,#avaliar7 ,#avaliar8 ,#avaliar9 ,#avaliar10{
+    border: 2px solid #0054e9;
+    border-radius: 6px;
+  }
+  
+  
+  ion-card-content p {
+    font-size: 1rem;
+  }
+  
+  ion-card-content {
+    padding-top: 0px;
+    --padding-top: 0px;
+    padding-left: 8px;
+    --padding-left: 0px;
+    padding-right: 8px;
+  }
+  
+  ion-card {
+    position: fixed;
+    margin-left: -5px;
+    // --margin-left:0px;
+  }
+  

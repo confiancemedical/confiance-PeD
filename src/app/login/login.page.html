@@ -1,0 +1,31 @@
+<ion-header class="botao1" color="primary">
+  <ion-tab-bar color="primary">
+    <ion-tab-button slot="start">
+      <ion-icon name="menu"></ion-icon>
+    </ion-tab-button>
+    <ion-title class="titlePerson2" size="small">Confiance Medical - {{appBuild}}</ion-title>
+  </ion-tab-bar>
+  <ion-button *ngIf="botaoSuperior === true" expand="full" color="scm2" class="botao1" size="medium" (click)="desceCortina()">
+    <ion-icon size="medium" name="chevron-down-circle-outline"></ion-icon>Recolher</ion-button>
+</ion-header>
+<ion-content  id="page5" color="scm" class="content-style">
+  <form id="login-form1">
+    <ion-list *ngIf="botaoSuperior === true" id="login-list2" class="login">
+      <ion-item id="login-input1" color="scm1">
+        <ion-label position="floating">Login</ion-label>
+        <ion-input class="loginText" aria-label="Login" type="text" [(ngModel)]="usuario.login" name="login" placeholder="" (ionChange)="lowerCase($event)"></ion-input>
+      </ion-item>
+      <ion-item id="login-input2" color="scm1">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input class="loginText" aria-label="Password" type="password" [(ngModel)]="usuario.password" name="password" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button *ngIf="botaoSuperior === true" expand="full" color="primary" class="botao1" size="medium" (click)="autentica()">Continuar</ion-button>
+    <ion-card *ngIf="botaoInferior === true">
+      <img src="./assets/imgs/lindinha.png" />
+    </ion-card>
+    <ion-footer>
+      <ion-button *ngIf="botaoInferior === true" expand="full" color="medium" size="medium" (click)="sobeCortina()"><ion-icon size="medium" name="chevron-up-circle-outline"></ion-icon> Acessar</ion-button>
+    </ion-footer>
+  </form>
+</ion-content>

@@ -1,20 +1,75 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <ion-tab-bar>
+    <ion-title class="titlePerson" size="small">SHT - Habilitação Técnica</ion-title>
+    <ion-buttons>
+      <ion-badge color="secondary" *ngIf="onLine === true" slot="end">ON</ion-badge>
+      <ion-badge color="danger" *ngIf="onLine === false" slot="end">OFF</ion-badge>
+      <ion-button class="popoverMeu" size="small" (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" size="small" name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-tab-bar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <form [formGroup]="formgroup">
+    <ion-list *ngIf="listPreset.length > 0">
+      <ion-item-divider class="barra-top" color="scm5">ùltimos Seriais Acessados</ion-item-divider>
+      <ion-item>
+        <!-- <cdk-virtual-scroll-viewport class="list" itemSize="16" style="height: 200px"> -->
+          <ion-list>
+            <ion-item *ngFor="let p of listPreset">
+              <a (click)="selecionaPreset(p)">{{p.serial}}</a>
+              <ion-button position="end" fill="outline" shape="round" (click)="excluiPreset(p)" id="cliente-button1" color="primary">
+                <ion-icon name="trash-outline" color="danger"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        <!-- </cdk-virtual-scroll-viewport> -->
+      </ion-item>
+    </ion-list>
+    <ion-list>
+    <!-- <h4>Série</h4> -->
+    <ion-item-divider class="barra-top" color="scm5">Série</ion-item-divider>
+    <ion-item>
+    <div class = "row">
+      <div class = "box"><ion-input #ch1Input class="item_radio2" type="tel" maxlength="1" formControlName="ch1" name="serial1" (input)="verificaDigitoSerial($event, '1')"></ion-input></div>
+      <div class = "box"><ion-input #ch2Input class="item_radio2" type="tel" maxlength="1" formControlName="ch2" name="serial2" (input)="verificaDigitoSerial($event, '2')"></ion-input></div>
+      <div class = "box"><ion-input #ch3Input class="item_radio2" type="tel" maxlength="1" formControlName="ch3" name="serial3" (input)="verificaDigitoSerial($event, '3')"></ion-input></div>
+      <div class = "box"><ion-input #ch4Input class="item_radio2" type="tel" maxlength="1" formControlName="ch4" name="serial4" (input)="verificaDigitoSerial($event, '4')"></ion-input></div>
+      <div class = "box"><ion-input #ch5Input class="item_radio2" type="tel" maxlength="1" formControlName="ch5" name="serial5" (input)="verificaDigitoSerial($event, '5')"></ion-input></div>
+      <div class = "box"><ion-input #ch6Input class="item_radio2" type="tel" maxlength="1" formControlName="ch6" name="serial6" (input)="verificaDigitoSerial($event, '6')"></ion-input></div>
+      <div class = "box"><ion-input readonly class="item_radio2" type="tel" maxlength="1" value="-"></ion-input></div>
+      <div class = "box"><ion-input #ch7Input class="item_radio2" type="tel" maxlength="1" formControlName="ch7" name="serial7" (input)="verificaDigitoSerial($event, '7')"></ion-input></div>
+      <div class = "box"><ion-input #ch8Input class="item_radio2" type="tel" maxlength="1" formControlName="ch8" name="serial8" (input)="verificaDigitoSerial($event, '8')"></ion-input></div>
+    </div>
+  </ion-item>
+    <ion-item-divider class="barra-top" color="scm5">Código</ion-item-divider>
+    <ion-item>
+      <ion-label  position="stacked" color="scm1" style="margin-left: 20px">Usar Código?</ion-label>
+      <ion-checkbox aria-label="" formControlName="codigo" (ionChange)="verificaCtCodigo($event)"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+    <div *ngIf="ctCodigo === true" class = "row">
+      <div class = "box"><ion-input #cod1Input class="item_radio2" type="tel" maxlength="1" formControlName="cod1" name="codigo1" (input)="verificaDigitoCodigo($event, '1')"></ion-input></div>
+      <div class = "box"><ion-input #cod2Input class="item_radio2" type="tel" maxlength="1" formControlName="cod2" name="codigo2" (input)="verificaDigitoCodigo($event, '2')"></ion-input></div>
+      <div class = "box"><ion-input #cod3Input class="item_radio2" type="tel" maxlength="1" formControlName="cod3" name="codigo3" (input)="verificaDigitoCodigo($event, '3')"></ion-input></div>
+    </div>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-item-divider class="barra-top" color="scm5">Senha de Acesso</ion-item-divider>
+    <ion-item>
+      <ion-badge *ngIf="senhaAcesso !== ''" item-end>{{senhaAcesso}}</ion-badge>
+    </ion-item>
+    <p>&nbsp;</p>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-button  fill="outline" shape="round" [disabled]="!formgroup.valid" (click)="gerarSenha()" id="btmSalva" color="primary">Gerar</ion-button>
+      <ion-button  fill="outline" shape="round" (click)="limpar()" id="btmSalva" color="primary">Limpar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  </form>
+
 </ion-content>

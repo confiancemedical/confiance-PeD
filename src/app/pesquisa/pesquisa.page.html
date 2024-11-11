@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pesquisa de Satisfação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Avalie nosso sistema</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Sua opinião é muito importante e nos ajudará a oferecer a melhor experiência possível.
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+
+              <ion-button color="primary" fill={{avaliar1}} id="avaliar1" size="small" (click)="avaliar(1)">1
+                <!-- <ion-icon name={{avaliar1}}></ion-icon> -->
+              </ion-button>
+
+
+              <ion-button color="primary" fill={{avaliar2}} id="avaliar2" size="small" (click)="avaliar(2)">2
+                <!-- <ion-icon name={{avaliar2}}></ion-icon> -->
+              </ion-button>
+
+
+                <ion-button color="primary" fill={{avaliar3}} id="avaliar3" size="small" (click)="avaliar(3)">3
+                  <!-- <ion-icon name={{avaliar3}}></ion-icon> -->
+                </ion-button>
+
+
+                <ion-button color="primary" fill={{avaliar4}} id="avaliar4" size="small" (click)="avaliar(4)">4
+                  <!-- <ion-icon name={{avaliar4}}></ion-icon> -->
+                </ion-button>
+
+
+                <ion-button color="primary" fill={{avaliar5}} id="avaliar5" size="small" (click)="avaliar(5)">5
+                  <!-- <ion-icon name={{avaliar5}}></ion-icon> -->
+                </ion-button>
+
+                <ion-button color="primary" fill={{avaliar6}} id="avaliar6" size="small" (click)="avaliar(6)">6
+                  <!-- <ion-icon name={{avaliar1}}></ion-icon> -->
+                </ion-button>
+
+
+                <ion-button color="primary" fill={{avaliar7}} id="avaliar7" size="small" (click)="avaliar(7)">7
+                  <!-- <ion-icon name={{avaliar2}}></ion-icon> -->
+                </ion-button>
+
+
+                  <ion-button color="primary" fill={{avaliar8}} id="avaliar8" size="small" (click)="avaliar(8)">8
+                    <!-- <ion-icon name={{avaliar3}}></ion-icon> -->
+                  </ion-button>
+
+
+                  <ion-button color="primary" fill={{avaliar9}} id="avaliar9" size="small" (click)="avaliar(9)">9
+                    <!-- <ion-icon name={{avaliar4}}></ion-icon> -->
+                  </ion-button>
+
+
+                  <ion-button color="primary" fill={{avaliar10}} id="avaliar10" size="small" (click)="avaliar(10)">10
+                    <!-- <ion-icon name={{avaliar5}}></ion-icon> -->
+                  </ion-button>
+        </ion-row>
+      </ion-grid>
+
+      <ion-item>
+        <ion-label position="floating">Deixe um comentário (opcional)</ion-label>
+        <ion-textarea [(ngModel)]="comentario"></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="block" (click)="enviarAvaliacao()">Enviar Avaliação</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
